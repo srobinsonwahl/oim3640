@@ -1,4 +1,3 @@
-# oim3640
 # Software Development Portfolio Showcase - OIM 3640
 
 Welcome to my Software Development Portfolio Showcase! 🚀
