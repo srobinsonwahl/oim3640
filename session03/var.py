@@ -8,6 +8,8 @@ message = 'I did something cool today!'
 n = 100
 pi = 3.14
 
+# Always write statements in .py file
+
 # Expressions and Statements
 # Expression = combination of values, variables, and operators. A value
 # all by itself is considered an expression, and so is a variable.
