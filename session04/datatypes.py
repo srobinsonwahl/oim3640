@@ -17,7 +17,7 @@
 
 2 ** 100    # 2 to the power 100
 
-len(str(2 ** 1000000))  # How many digits in a really BIG number?
+# len(str(2 ** 1000000))  # How many digits in a really BIG number?
 
 import math
 print(math.pi)
@@ -42,6 +42,10 @@ print(r'\\\t\\')
 print('''line1
 ... line 2
 ... line3''')
+
+"""
+This is another way to write large blocks of comments
+"""
 
 # BOOLEAN:
 
@@ -70,11 +74,11 @@ not False
 not 1 > 2
 
 # we often use Boolean type in conditional statements:
-age = int.input('Please enter your age in years:')
+age = int(input('Please enter your age in years:'))
 if age >= 21:
-    print('Yes, you can.')
+    print('Yes, you can have that Sopporo Black.')
 else:
-    print('Sorry.')
+    print('Sorry little bro, gonna have to tell you to leave.')
 
 # General Rule: arithmetic > comparison > not > and/or
 5 * 7 >= 3 +5 * (7 - 1) and not False
@@ -88,3 +92,19 @@ True
 # NONETYPE:
 
 # The sole value of the type NoneType, None, is frequently used to represent the absense of a value, as when default arguments ar enot passed to a function.
+
+def my_add(a, b):
+    """
+    Retrun the sum of two values. (docstring)
+    """
+    return a + b
+
+# print(my_add(5, 4))
+
+name = input('Please enter your name: ')
+password = input('Please enter your password: ')
+
+if name == 'admin' and password == 'admin':
+    print('Hi, welcome')
+else:
+    print('Get out of here, hacker!')
