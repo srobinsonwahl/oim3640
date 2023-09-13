@@ -6,7 +6,7 @@ print('This output is an integer:', type(a + 2))
 
 a = a + 1.0
 a
-print('This output is floating-point addition:', type(a))
+print('This output is a floating integer:', type(a))
 
 a = 3
 b = a 
@@ -42,9 +42,8 @@ seconds_hour = seconds_day / 24
 seconds_minute = seconds_hour / 60
 
 days = epoch // seconds_day
-hours = (epoch % seconds_day) // seconds_hour - 4
+hours = (epoch % seconds_day) // seconds_hour
 minutes = (epoch % seconds_day) % seconds_hour // seconds_minute
 seconds = (epoch % seconds_day) % seconds_hour % seconds_minute
 
-print('%s: %s: %s: %s' %(days, hours, minutes, seconds))
 # print('The current time in Boston, MA, USA is:', {hours - 12}:{minutes}:{seconds})
