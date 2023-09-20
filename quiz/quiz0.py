@@ -14,8 +14,9 @@ Notice:
 """
 
 # Pseudocode:
-# Prompt the user for an amount in USD thats a float
-# Take the input, convert it to a float, and convert it to EUR value
+# Prompt the user for an amount in USD
+# Take the input, convert it to a float
+# Convert it to EUR value
 # Print the converted float
 
 def convertusdeur():
