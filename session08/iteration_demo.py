@@ -9,19 +9,19 @@
 
 # calculate the sum of integers from 0 - 10:
 
-# total = 0
+total = 0
 
-# for i in range(10+1):
-#     print(f'Iteration {i}:')
-#     print(f'    before adding {i}, the current total is {total}')
-#     total += i
-#     print(f'    after adding {i}, the total beomes {total}')
-#     print()
+for i in range(10+1):
+    print(f'Iteration {i}:')
+    print(f'    before adding {i}, the current total is {total}')
+    total += i
+    print(f'    after adding {i}, the total beomes {total}')
+    print()
 
 
-# print(total)
+print(total)
 
-# repeat asking user to enter password until it is correct
+# # repeat asking user to enter password until it is correct
 
 while True:
     password = input('Enter your password: ')
