@@ -69,16 +69,18 @@ def find_words_no_e():
     return counter_no_e / counter_total
 
 
-
-perc_no_e = find_words_no_e()
-print(f'The percentage of the words with no "e" is {perc_no_e*100:.2f}%.')
+# perc_no_e = find_words_no_e()
+# print(f'The percentage of the words with no "e" is {perc_no_e*100:.2f}%.')
 
 
 def avoids(word, forbidden):
     """
     returns True if the given word does not use any of the forbidden letters
     """
-    pass
+    for c in word:
+        if c in forbidden:
+            return False
+    return True
 
 
 # print(avoids('Babson', 'abcde'))
@@ -90,7 +92,18 @@ def find_words_no_vowels():
     """
     returns the percentage of the words that don't have vowel letters
     """
-    pass
+
+    f = open('data/words.txt')  # Assume words.txt is under data folder
+    counter_no_value = 0
+    counter_total = 0
+
+    for line in f:
+        word = line.strip()
+        counter_total += 1
+        if avoids(word, 'aeiouAEIOU'):
+            counter_no_value += 1
+        
+    return counter_no_value / counter_total
 
 
 # perc_no_vowel = find_words_no_vowels()
@@ -102,7 +115,11 @@ def uses_only(word, available):
     takes a word and a string of letters, and that returns True if the word
     contains only letters in the string available.
     """
-    pass
+
+    for c in word:
+        if c not in available:
+            return False
+        return True
 
 
 # print(uses_only('Babson', 'aBbsonxyz'))
@@ -110,11 +127,25 @@ def uses_only(word, available):
 
 
 def find_words_only_use_planet():
-    """"""
-    pass
+    """
+    This function searches the list of words for words that could be formed using the letters in word 'planets'. It counts these words, and prints them.
+    """
+
+    f = open('data/words.txt')  # Assume words.txt is under data folder
+    counter_planet = 0
+    counter_total = 0
+
+    for line in f:
+        word = line.strip()
+        if uses_only(word, 'planets'):
+            counter_planet += 1
+        else:
+            counter_total += 1
+    
+    return counter_planet
 
 
-# print('Number of words that use only letters from "planets" is', find_words_only_use_planet())
+print('Number of words that use only letters from "planets" is', find_words_only_use_planet())
 
 
 def uses_all(word, required):
