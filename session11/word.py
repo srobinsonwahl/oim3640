@@ -92,7 +92,6 @@ def find_words_no_vowels():
     """
     returns the percentage of the words that don't have vowel letters
     """
-
     f = open('data/words.txt')  # Assume words.txt is under data folder
     counter_no_value = 0
     counter_total = 0
@@ -145,7 +144,7 @@ def find_words_only_use_planet():
     return counter_planet
 
 
-print('Number of words that use only letters from "planets" is', find_words_only_use_planet())
+# print('Number of words that use only letters from "planets" is', find_words_only_use_planet())
 
 
 def uses_all(word, required):
@@ -153,17 +152,31 @@ def uses_all(word, required):
     takes a word and a string of required letters, and that returns True if
     the word uses all the required letters at least once.
     """
-    pass
+    for c in required:
+        if c not in word:
+            return False
+    return True
+   
 
-
-# please write test cases
+# print(uses_all('babson', 'abson'))
+# print(uses_all('ephen', 'sephn'))
+# print(uses_all('test', 'wowe'))
+# print(uses_all('meow', 'woemmmeeeooowwwww'))
 
 
 def find_words_using_all_vowels():
     """
     return the number of the words that use all the vowel letters
     """
-    pass
+    f = open('data/words.txt')  # Assume words.txt is under data folder
+    counter_all_vowels = 0
+
+    for line in f:
+        word = line.strip()
+        if uses_all(word, 'aeiou'):
+            counter_all_vowels += 1
+        
+    return counter_all_vowels
 
 
 # print('The number of words that use all the vowels:', find_words_using_all_vowels())
@@ -174,7 +187,11 @@ def is_abecedarian(word):
     returns True if the letters in a word appear in alphabetical order
     (double letters are ok).
     """
-    pass
+    for i in range(1, len(word)):
+        if word[i] <= word[i - 1]:
+            return False
+        
+    return True
 
 
 # print(is_abecedarian('abs'))
@@ -185,7 +202,15 @@ def find_abecedarian_words():
     """
     returns the number of abecedarian words
     """
-    pass
+    f = open('data/words.txt')  # Assume words.txt is under data folder
+    counter_abec_words = 0
+    
+    for line in f:
+        word = line.strip()
+        if is_abecedarian(word):
+            counter_abec_words += 1
+    
+    return counter_abec_words
 
 
 # print(find_abecedarian_words())
