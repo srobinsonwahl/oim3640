@@ -187,9 +187,11 @@ def is_abecedarian(word):
     returns True if the letters in a word appear in alphabetical order
     (double letters are ok).
     """
-    for i in range(1, len(word)):
-        if word[i] <= word[i - 1]:
+    previous = word[0]
+    for c in word:
+        if c < previous:
             return False
+        previous = c
         
     return True
 
@@ -214,6 +216,28 @@ def find_abecedarian_words():
 
 
 # print(find_abecedarian_words())
+
+def find_long_abecedarian():
+    """
+    returns the largest abecedarian word in the list
+    """
+    f = open('data/words.txt')  # Assume words.txt is under data folder
+
+    curr_max_length = 0
+    curr_longest = ''
+    
+    for line in f:
+        word = line.strip()
+        if is_abecedarian(word) and len(word) > curr_max_length:
+            curr_max_length = len(word)
+            curr_longest = word
+
+    return curr_longest 
+
+
+print(find_long_abecedarian())
+
+
 
 
 def is_abecedarian_using_recursion(word):
