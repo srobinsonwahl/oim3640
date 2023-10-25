@@ -23,7 +23,6 @@ print(f'This function returns the ceiling of a given float, here it\'s: {a}.')
 
 def my_abs_3(a):
     """
-    (docstring)
 
     prints the absolute value of any given number
     """
@@ -39,14 +38,13 @@ my_abs_3(10)
 
 def my_abs_4(a):
     """
-    (docstring)
 
     returns the absolute value of any given number
     """
     if a < 0:
-        return(-a)
+        return -a
     else:
-        return(a)
+        return a
 
 print(5 + my_abs_4(8))
 print(5 + my_abs_4(-8))
@@ -56,15 +54,14 @@ print(5 + my_abs_4(-8))
 b = 'test'
 def my_abs_5(a):
     """
-    (docstring)
     
     returns the absolute value of any integer or floating number
     """
     if isinstance(a, int) or isinstance(a, float):
         if a < 0:
-           return(-a)
+           return -a
         else:
-           return(a)
+           return a
     else:
         print('This function does not support chracters other than integers or floating numbers.')
 
@@ -76,13 +73,12 @@ print(my_abs_5(-50))
 
 def quadratic(a, b, c):
     """
-    (docstring)
     
     returns the values of two roots of any given value a, b, and c in the quadratic equation
     """
     unknown_1 = ((-b + ((b ** 2 - 4 * (a * c)) ** 0.5)) / 2 * a)
     unknown_2 = ((-b - ((b ** 2 - 4 * (a * c)) ** 0.5)) / 2 * a)
-    return(unknown_1, unknown_2)
+    return unknown_1, unknown_2
 
 a = 1
 b = 7
