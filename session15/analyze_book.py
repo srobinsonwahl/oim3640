@@ -54,16 +54,16 @@ def skip_gutenberg_header(fp):
             break
 
 
-def total_words(hist):
-    """Returns the total of the frequencies in a histogram."""
-    freq = 0
-    process_file()
-    for i in hist:
-        freq += i.item()
+# def total_words(hist):
+#     """Returns the total of the frequencies in a histogram."""
+#     freq = 0
+#     process_file()
+#     for i in hist:
+#         freq += i.item()
 
-    print(freq)
+#     print(freq)
 
-total_words(process_file())       
+# total_words(process_file())       
 
 def different_words(hist):
     """Returns the number of different words in a histogram."""
