@@ -6,7 +6,13 @@
     <title>Hello, {{ username }} </title>
 </head>
 <body>
+    <!-- jinja2 templates -->
+    {% if username %}
     <h1>Hello, {{ username }}!</h1>
     <p style="color:red">I am very excited to learn flask.</p>
+    {% else %}
+    <h1>Hello, guest!</h1>
+    {% endif %}
+    
 </body>
 </html>
